@@ -1,0 +1,42 @@
+table {
+    margin: auto;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    text-align: left;
+    background-color: green;
+    color: white;
+    text-transform: uppercase;
+    font-family: Helvetica;
+}
+
+th, td {
+    text-align: left;
+    padding: 15px;
+    
+}
+
+tr:nth-child(even) {
+    background-color: aliceblue;
+}
+
+nav {
+    background-color: green;
+    text-align: center;
+}
+
+nav li{
+    list-style-type: none;
+    padding: 5px;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+}
