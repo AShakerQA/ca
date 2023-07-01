@@ -40,7 +40,6 @@ nav {
     border-bottom: 1px solid seashell;
     background-color: black;
     height: 69px;
-    background-color: transparent;
 }
 
 nav ul {
@@ -86,6 +85,10 @@ nav li a {
     padding: 10px;
     opacity: 0.8;
     background-color: black;
+}
+
+#mission > div > h4 {
+    padding: 10px;
 }
 
 main { 
@@ -149,3 +152,29 @@ main {
     margin: 20px auto;
     padding-bottom: 15px;
 }
+
+.location-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.location-cards {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    max-width: 300px;
+    margin: 15px 20px;
+    padding: 15px 40px;
+    background-color: black;
+    opacity: 0.8;
+}
+
+.location-cards h2,
+.location-cards p {
+    margin: 10px auto;
+}
+/* End of Location */
