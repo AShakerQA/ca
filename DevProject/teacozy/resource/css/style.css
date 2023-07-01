@@ -1,4 +1,10 @@
+/* Reset */
 * {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
     font-family: Helvetica;
     font-size: 22px;
     color: seashell;
@@ -7,10 +13,92 @@
     text-align: center;
 }
 
-#logo {
-    height: 50px;
+h2 {
+    font-size: 1.25rem;
 }
 
-h2 {
-    font-size: 30px;
+h4 {
+    font-size: 1rem;
+}
+
+
+/* Navigation */
+header {
+    background-color: black;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid seashell;
+    background: black;
+    height: 69px;
+    background-color: transparent;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style-type: none;
+    text-decoration: unerline;
+    padding: 0 10px;
+    gap: 20px;
+}
+
+nav li {
+    padding: 0 10px;
+}
+
+nav img {
+    margin: 10px;
+    height: 50px;
+}
+nav li a {
+    color: seashell;
+}
+/* End of Navidation */
+
+/* Mission */
+#mission {
+    margin: 20px auto;
+    background-image: url("../img/img-mission-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 700px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 69px;
+}
+
+#mission div {
+    width: 100%;
+    padding: 10px;
+    opacity: 0.8;
+    background-color: black;
+}
+
+
+
+main { 
+    position: relative; 
+    top: 50px;
+}
+
+
+
+
+
+figure > img {
+    height: 200px;
+    width: 300px;
 }
