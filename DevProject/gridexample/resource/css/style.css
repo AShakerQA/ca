@@ -3,8 +3,9 @@
     height: 500px;
     width: 500px;
     display: grid;
-    grid-template-columns: 25% 25% 2fr 1fr;
-    grid-template-rows: 200px 200px;
+    /* grid-template-columns: 25% 25% 2fr 1fr;
+    grid-template-rows: 200px 200px; */
+    grid-template: 200px minmax(100px, 200px) / 25% 25% 1fr 1fr;
     row-gap: 10px;
     column-gap: 15px;
   }
