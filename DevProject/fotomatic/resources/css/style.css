@@ -25,8 +25,8 @@ html {
 
 .image-container img {
   display: block;
-  max-width:100%;
-  height:auto;
+  max-width: 100%;
+  height: auto;
 }
 
 @media only screen and (min-width: 480px) and (max-width: 760px) {
@@ -45,11 +45,11 @@ html {
 
 header {
   position: fixed;
-  top:0px;
+  top: 0px;
   width: 100%;
   border-bottom: solid 1px #c6c1c1;
   background-color: white;
-  z-index:2;
+  z-index: 2;
   height: 5.3125rem;;
 }
 
@@ -104,7 +104,7 @@ header .tablet {
   }
 
   header .content {
-    align-items:center;
+    align-items: center;
     padding: 1.875rem 0.5rem;
   }
 
@@ -120,7 +120,7 @@ header .tablet {
   }
 
   .content .tablet {
-    display:block;
+    display: block;
   }
 }
 
@@ -237,8 +237,8 @@ header .tablet {
     height: auto;
     background-color: transparent;
     border: none;
-    margin:0;
-    padding:0;
+    margin: 0;
+    padding: 0;
   }
 
   #sign-up-cta .content {
@@ -387,8 +387,8 @@ header .tablet {
 #filters-section .images-container {
   max-width: 100%;
   padding: 0 1%;
-  display:flex;
-  justify-content:center;
+  display: flex;
+  justify-content: center;
 }
 
 @media only screen and (max-width: 760px) {
@@ -443,7 +443,7 @@ header .tablet {
 }
 
 #quotes-section .quote-citation {
-  display:inline-block;
+  display: inline-block;
   margin-left: 1.875rem;
 }
 
@@ -468,12 +468,12 @@ header .tablet {
   #quotes-section .content {
     padding: 3rem 2rem;
     display: flex;
-    justify-content:center;
-    flex-direction:column; 
+    justify-content: center;
+    flex-direction: column; 
   }
 
   #quotes-section .quote-citation {
-    align-self:center;
+    align-self: center;
     padding-top: 5%;
   }
 }
