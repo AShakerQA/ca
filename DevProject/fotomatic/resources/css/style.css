@@ -26,11 +26,14 @@ html {
 
 .image-container img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 @media only screen and (max-width: 760px) {
   .main-content {
     top: 2.5625rem;
+    text-align: left;
   }
 }
 
@@ -123,6 +126,7 @@ header .mobile {
   align-items: flex-start;
   background-image: url("../img/banner-landingpage.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
   height: 43.5rem;
   
 }
@@ -256,6 +260,8 @@ header .mobile {
   width: 90%;
   height: 65%;
   margin: 0 auto;
+  padding: 2rem 2rem 2.5rem 2rem;
+  margin: 4rem 2.375rem 2.875rem 2rem;
 }
 
 .feature h2 {
@@ -263,6 +269,7 @@ header .mobile {
   font-size: 2.25rem;
   font-weight: bold;
   color: #4a4a4a;
+  font-family: 'Roboto-Bold';
 }
 
 .feature h3 {
@@ -270,6 +277,7 @@ header .mobile {
   line-height: 1.2;
   font-weight: 300;
   color: #4a4a4a;
+  font-family: 'Roboto-Light';
 }
 
 @media only screen and (max-width: 890px) {
@@ -313,6 +321,7 @@ header .mobile {
   font-size: 2.25rem;
   font-weight: bold;
   color: white;
+  font-family: 'Roboto-Bold';
 }
 
 #filters-section .content h3 {
@@ -320,6 +329,12 @@ header .mobile {
   line-height: 1.4;
   font-weight: 300;
   color: white;
+  font-family: 'Roboto-Light';
+}
+
+#filters-section .img-container {
+  display: flex;
+  justify-content: center;
 }
 
 #filters-section .images-container {
