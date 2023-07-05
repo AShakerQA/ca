@@ -13,3 +13,5 @@ const howOld = (age, year) => {
             return `You were ${newAge} in the year ${year}`
         }
     }
+
+console.log(howOld(20, 2030));
