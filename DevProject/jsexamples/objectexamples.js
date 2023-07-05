@@ -33,3 +33,33 @@ let fasterShip = {
   
   console.log(rocketShip[propName]);
   
+  //add, mutate and delete object properties 
+  let silverSpaceship = {
+    'Fuel Type' : 'Turbo Fuel',
+    homePlanet : 'Earth',
+    color: 'silver',
+    'Secret Mission' : 'Discover life outside of Earth.'
+  };
+  
+  // Write your code below
+  silverSpaceship.color = 'glorious gold';
+  silverSpaceshipspaceship.numEngines = 9;
+  delete silverSpaceship['Secret Mission'];
+  
+  console.log(silverSpaceship['Secret Mission']);
+
+  //Object Method declaration and invoking
+  let retreatMessage = 'We no longer wish to conquer your planet. It is full of dogs, which we do not care for.';
+
+// Write your code below
+const alienShip = {
+  retreat () {
+    console.log(retreatMessage);
+  },
+  takeOff () {
+    console.log('Spim... Borp... Glix... Blastoff!');
+  }
+}
+
+alienShip.retreat();
+alienShip.takeOff();
