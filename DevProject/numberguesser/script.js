@@ -12,9 +12,9 @@ const compareGuesses = (userGuess, computerGuess, secret) => {
     secret = generateTarget();
     const userValue = Math.abs(secret - userGuess);
     const computerValue = Math.abs(secret - computerGuess);
-    console.log('secret: ' + secret);
-    console.log('userValue: ' + userValue);
-    console.log('computerValue: ' + computerValue);
+    // console.log('secret: ' + secret);
+    // console.log('userValue: ' + userValue);
+    // console.log('computerValue: ' + computerValue);
     if (userValue === computerValue) {
         return true;
     } else if (userValue < computerValue) {
@@ -24,4 +24,23 @@ const compareGuesses = (userGuess, computerGuess, secret) => {
     }
 };
 
-console.log(compareGuesses(2, 9));
+// console.log(compareGuesses(2, 9));
+
+const updateScore = winner => {
+    switch (winner){
+        case 'human':
+            humanScore++;
+            break;
+        case 'computer':
+            computerScore++;
+            break;
+        default:
+            break;
+    }
+};
+
+// console.log(updateScore('computer'));
+// console.log(humanScore);
+// console.log(computerScore);
+
+const advanceRound = () => currentRoundNumber++;
