@@ -186,6 +186,7 @@ console.log(robot.provideInfo());
 
 //getter example
 const secondRobot = {
+  //the underscore tells developers that this attribute is private (however you can still mutate it)
   _model: '1E78V2',
   _energyLevel: 100,
   get energyLevel () {
