@@ -227,3 +227,39 @@ const thirdRobot = {
 thirdRobot.numOfSensors = 100;
 
 console.log(thirdRobot.numOfSensors);
+
+
+//factory functions
+const robotFactory = (model, mobile) => {
+  return { //notice the return keyword
+    model: model,
+    mobile: mobile,
+    beep() {
+      console.log('Beep Boop');
+    }
+  }
+};
+
+//creates a tinCan robot from the factory function
+const tinCan = robotFactory('P-500', true);
+
+tinCan.beep();
+
+console.log(tinCan.model);
+
+
+//Property Value Shorthand introduced in ES6 
+const fastRobotFactory = (model, mobile) => {
+  return {
+    model,
+    mobile,
+    beep() {
+      console.log('Beep Boop');
+    }
+  }
+}
+
+// To check that the property value shorthand technique worked:
+const newRobot = fastRobotFactory('P-501', false)
+console.log(newRobot.model)
+console.log(newRobot.mobile)
