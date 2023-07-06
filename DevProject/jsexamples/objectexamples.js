@@ -295,3 +295,44 @@ const { model, energyLevel} = robot;
 console.log(model);
 console.log(energyLevel);
 //cannot have the same declaration of an attribute more than once, using destructive assignment
+
+
+//Build-in Object Methods
+const robotB = {
+	model: 'SAL-1000',
+  mobile: true,
+  sentient: false,
+  armor: 'Steel-plated',
+  energyLevel: 75
+};
+
+// What is missing in the following method call?
+const robotKeys = Object.keys(robotB);
+
+console.log(robotKeys);
+//Output: [ 'model', 'mobile', 'sentient', 'armor', 'energyLevel' ]
+
+// Declare robotEntries below this line:
+const robotEntries = Object.entries(robotB);
+
+console.log(robotEntries);
+/* Output: 
+[ [ 'model', 'SAL-1000' ],
+[ 'mobile', true ],
+[ 'sentient', false ],
+[ 'armor', 'Steel-plated' ],
+[ 'energyLevel', 75 ] ] */
+
+// Declare newRobot below this line:
+const newRobotB = Object.assign({laserBlaster: true, voiceRecognition: true}, robotB);
+
+console.log(newRobot);
+/* Output:
+{ laserBlaster: true,
+  voiceRecognition: true,
+  model: 'SAL-1000',
+  mobile: true,
+  sentient: false,
+  armor: 'Steel-plated',
+  energyLevel: 75 }
+  */
