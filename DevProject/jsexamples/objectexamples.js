@@ -172,3 +172,167 @@ for (let crewMember in loopShip.crew){
 // Dan: Aerospace Engineering
 // Clementine: Physics
 // Shauna: Conservation Science
+
+//Using the this command, cannot use arrow function declarations for this. methods
+const robot = {
+  model: '1E78V2',
+  energyLevel: 100,
+  provideInfo() {
+    return `I am ${this.model} and my current energy level is ${this.energyLevel}.`;
+  }
+};
+
+console.log(robot.provideInfo());
+
+//getter example
+const secondRobot = {
+  //the underscore tells developers that this attribute is private (however you can still mutate it)
+  _model: '1E78V2',
+  _energyLevel: 100,
+  get energyLevel () {
+    if(typeof this._energyLevel === 'number') {
+      return `My current energy level is ${this._energyLevel}.`;
+    } else {
+      return 'System malfunction: cannot retrieve energy level';
+    }
+  }
+};
+
+//when calling a getter, no need to include the parentheses, its like calling a property
+console.log(secondRobot.energyLevel);
+
+
+//setters
+const thirdRobot = {
+  _model: '1E78V2',
+  _energyLevel: 100,
+  _numOfSensors: 15,
+  get numOfSensors(){
+    if(typeof this._numOfSensors === 'number'){
+      return this._numOfSensors;
+    } else {
+      return 'Sensors are currently down.'
+    }
+  },
+  //check input value is a number, else throw error
+  set numOfSensors(num){
+    if(typeof num === 'number' && num >= 0) {
+      this._numOfSensors = num;
+    } else {
+      console.log('Pass in a number that is greater than or equal to 0');
+    }
+  }
+};
+//set the new value using setter, notice no need to use paretheses. (similar to getters)
+thirdRobot.numOfSensors = 100;
+
+console.log(thirdRobot.numOfSensors);
+
+
+//factory functions
+const robotFactory = (model, mobile) => {
+  return { //notice the return keyword
+    model: model,
+    mobile: mobile,
+    beep() {
+      console.log('Beep Boop');
+    }
+  }
+};
+
+//creates a tinCan robot from the factory function
+const tinCan = robotFactory('P-500', true);
+
+tinCan.beep();
+
+console.log(tinCan.model);
+
+
+//destructuring technique: Property Value Shorthand introduced in ES6 
+const fastRobotFactory = (model, mobile) => {
+  return {
+    model,
+    mobile,
+    beep() {
+      console.log('Beep Boop');
+    }
+  }
+}
+
+// To check that the property value shorthand technique worked:
+const newRobot = fastRobotFactory('P-501', false)
+console.log(newRobot.model)
+console.log(newRobot.mobile)
+
+
+//Destructured Assignment
+const fourthRobot = {
+  model: '1E78V2',
+  energyLevel: 100,
+  functionality: {
+    beep() {
+      console.log('Beep Boop');
+    },
+    fireLaser() {
+      console.log('Pew Pew');
+    },
+  }
+};
+//is equivalent to const functionality = fourtRobot.functionality
+const { functionality } = fourthRobot;
+console.log(functionality);
+/*
+since functionality is referencing fourthRobot.functionality we can call the methods
+available to fourthRobot.functionality simply through functionality
+*/
+functionality.beep();
+
+
+//we can also use Destructured assignment for multiple attributes 
+// const { model, energyLevel, functionality } = robot;
+const { model, energyLevel} = robot;
+
+console.log(model);
+console.log(energyLevel);
+//cannot have the same declaration of an attribute more than once, using destructive assignment
+
+
+//Build-in Object Methods
+const robotB = {
+	model: 'SAL-1000',
+  mobile: true,
+  sentient: false,
+  armor: 'Steel-plated',
+  energyLevel: 75
+};
+
+// What is missing in the following method call?
+const robotKeys = Object.keys(robotB);
+
+console.log(robotKeys);
+//Output: [ 'model', 'mobile', 'sentient', 'armor', 'energyLevel' ]
+
+// Declare robotEntries below this line:
+const robotEntries = Object.entries(robotB);
+
+console.log(robotEntries);
+/* Output: 
+[ [ 'model', 'SAL-1000' ],
+[ 'mobile', true ],
+[ 'sentient', false ],
+[ 'armor', 'Steel-plated' ],
+[ 'energyLevel', 75 ] ] */
+
+// Declare newRobot below this line:
+const newRobotB = Object.assign({laserBlaster: true, voiceRecognition: true}, robotB);
+
+console.log(newRobot);
+/* Output:
+{ laserBlaster: true,
+  voiceRecognition: true,
+  model: 'SAL-1000',
+  mobile: true,
+  sentient: false,
+  armor: 'Steel-plated',
+  energyLevel: 75 }
+  */
