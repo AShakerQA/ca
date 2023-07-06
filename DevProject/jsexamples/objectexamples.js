@@ -248,7 +248,7 @@ tinCan.beep();
 console.log(tinCan.model);
 
 
-//Property Value Shorthand introduced in ES6 
+//destructuring technique: Property Value Shorthand introduced in ES6 
 const fastRobotFactory = (model, mobile) => {
   return {
     model,
@@ -263,3 +263,35 @@ const fastRobotFactory = (model, mobile) => {
 const newRobot = fastRobotFactory('P-501', false)
 console.log(newRobot.model)
 console.log(newRobot.mobile)
+
+
+//Destructured Assignment
+const fourthRobot = {
+  model: '1E78V2',
+  energyLevel: 100,
+  functionality: {
+    beep() {
+      console.log('Beep Boop');
+    },
+    fireLaser() {
+      console.log('Pew Pew');
+    },
+  }
+};
+//is equivalent to const functionality = fourtRobot.functionality
+const { functionality } = fourthRobot;
+console.log(functionality);
+/*
+since functionality is referencing fourthRobot.functionality we can call the methods
+available to fourthRobot.functionality simply through functionality
+*/
+functionality.beep();
+
+
+//we can also use Destructured assignment for multiple attributes 
+// const { model, energyLevel, functionality } = robot;
+const { model, energyLevel} = robot;
+
+console.log(model);
+console.log(energyLevel);
+//cannot have the same declaration of an attribute more than once, using destructive assignment
