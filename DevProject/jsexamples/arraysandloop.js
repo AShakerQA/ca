@@ -67,3 +67,18 @@ for (const pokemon of pokemonList){
   }
   console.log(`You caught a ${pokemon}!`);
 }
+
+
+//callback function, a function which is used as input to another function (which is the higher-order function)
+const addTwo = num => {
+  return num + 2;
+}
+
+//Example of a higher-order function
+const checkConsistentOutput = (func, val) => {
+  const checkA = val + 2;
+  const checkB = func(val);
+  return checkA === checkB ? func(val) : 'inconsistent results';
+}
+//invoke the callback function without parenthases to call the function, to invoke the function not return its results.
+console.log(checkConsistentOutput(addTwo, 4));
