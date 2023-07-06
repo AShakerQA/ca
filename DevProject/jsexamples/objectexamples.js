@@ -172,3 +172,32 @@ for (let crewMember in loopShip.crew){
 // Dan: Aerospace Engineering
 // Clementine: Physics
 // Shauna: Conservation Science
+
+//Using the this command, cannot use arrow function declarations for this. methods
+const robot = {
+  model: '1E78V2',
+  energyLevel: 100,
+  provideInfo() {
+    return `I am ${this.model} and my current energy level is ${this.energyLevel}.`;
+  }
+};
+
+console.log(robot.provideInfo());
+
+//getter example
+const secondRobot = {
+  _model: '1E78V2',
+  _energyLevel: 100,
+  get energyLevel () {
+    if(typeof this._energyLevel === 'number') {
+      return `My current energy level is ${this._energyLevel}.`;
+    } else {
+      return 'System malfunction: cannot retrieve energy level';
+    }
+  }
+};
+
+//when calling a getter, no need to include the parentheses, its like calling a property
+console.log(secondRobot.energyLevel);
+
+
