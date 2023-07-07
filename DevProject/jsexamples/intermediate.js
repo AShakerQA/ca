@@ -234,8 +234,8 @@ const subLength = (str, char) => {
   
   //for each value in strChars array, if value matches char
   //push index into empty array (found)
-  strChars.forEach((val, index) => {
-      if (val === char) {
+  strChars.forEach((val, index) => { //index is the current index being processed in the array
+      if (val === char) {            //parameters for Array.prototype.forEach() in mdn docs
           found.push(index);
       }
   });
