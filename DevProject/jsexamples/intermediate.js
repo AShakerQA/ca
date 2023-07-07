@@ -203,3 +203,51 @@ const randomStuff = [
 
 console.log(findMyKeys(randomStuff));
 // Should print 4
+
+
+//take a number and factorize it.
+const factorial = (num) => {
+    if (num === 0 || num === 1)
+      return 1;
+    for (let i = num - 1; i >= 1; i--) {
+      num *= i;
+    }
+    return num;
+    }
+
+  factorial(6);
+
+
+
+// print the space between two letters in an array
+// if no 2 matches return 0
+// subLength('Saturday', 'a'); // returns 6
+// subLength('summer', 'm'); // returns 2
+// subLength('digitize', 'i'); // returns 0
+// subLength('cheesecake', 'k'); // returns 0
+
+const subLength = (str, char) => {
+  //split array into letters s
+  let strChars = str.toLowerCase().split(""),
+      found = [], //initialise empty array
+      length = 0;
+  
+  //for each value in strChars array, if value matches char
+  //push index into empty array (found)
+  strChars.forEach((val, index) => {
+      if (val === char) {
+          found.push(index);
+      }
+  });
+// if no 2 occurrences then return length, in this case
+//would return 0
+  if (found.length != 2) {
+      return length;
+  }
+//slice at index where the match happened
+//e.g. str.slice(1,6) is exclusive of 6, therefore length = 5
+// +1 = 6, return answer as 6 for 'Saturday', 'a'
+ return str.slice(found[0], found[1]).length + 1;
+}
+
+console.log(subLength('Saturday', 'a'));
