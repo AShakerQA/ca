@@ -87,3 +87,75 @@ console.log(sq);
 
 //if you didt have toSquare func you can do
 //const squareNums = array => array.map((e) => e * e);
+
+
+//take an array and return a new array, shouting the greetings
+// Write your code here:
+const shoutGreetings = (array) => {
+    //create temp array, can use map func as well which is simpler
+    const tempArray = [];
+    for (let i = 0; i < array.length; i++) {
+      const upper = `${array[i].toUpperCase()}!`;
+      tempArray.push(upper);
+    }
+    return tempArray;
+  };
+  
+/* Shorter example with array.map() Method, an array Iterator
+const shoutGreetings = array => array.map(word => word.toUpperCase() + '!');
+*/
+
+const greetings = ["hello", "hi", "heya", "oi", "hey", "yo"];
+
+console.log(shoutGreetings(greetings));
+// Should print [ 'HELLO!', 'HI!', 'HEYA!', 'OI!', 'HEY!', 'YO!' ]
+  
+
+/* takes in an array and sorts them in decending order
+
+function compareNumbers(a, b) {
+  return a - b;
+}
+numberArray.sort(compareNumbers)
+This will reverse the order of the sort
+*/
+const sortYears = (array) => array.sort((a, b) => b - a);
+
+
+const years = [1970, 1999, 1951, 1982, 1963, 2011, 2018, 1922];
+console.log(sortYears(years));
+// Should print [ 2018, 2011, 1999, 1982, 1970, 1963, 1951, 1922 ]
+
+
+//function that checks if items are present in both arrays
+const justCoolStuff = (array1, array2) => 
+/*
+the second portion returns true, array2.includes(item) if its in array2
+which is then returned to array1.filter which creates a new array with 
+values that matches true.
+*/
+array1.filter(item => array2.includes(item))
+
+const coolStuff = ['gameboys', 'skateboards', 'backwards hats', 'fruit-by-the-foot', 'pogs', 'my room', 'temporary tattoos'];
+
+const myStuff = [ 'rules', 'fruit-by-the-foot', 'wedgies', 'sweaters', 'skateboards', 'family-night', 'my room', 'braces', 'the information superhighway']; 
+
+console.log(justCoolStuff(myStuff, coolStuff))
+// Should print [ 'fruit-by-the-foot', 'skateboards', 'my room' ]
+
+/*
+return boolean based on if each item has a plant based origin
+The every() method tests whether all elements in the array pass the 
+test implemented by the provided function. It returns a Boolean value.
+*/
+const isTheDinnerVegan = (array) => array.every((e) => e.source === "plant");
+
+const dinner = [
+  { name: "hamburger", source: "meat" },
+  { name: "cheese", source: "dairy" },
+  { name: "ketchup", source: "plant" },
+  { name: "bun", source: "plant" },
+  { name: "dessert twinkies", source: "unknown" },
+];
+
+console.log(isTheDinnerVegan(dinner));
