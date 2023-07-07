@@ -251,3 +251,26 @@ const subLength = (str, char) => {
 }
 
 console.log(subLength('Saturday', 'a'));
+
+
+//return string, seperated by comma, except last value to be added with an and
+const groceries = arr => {
+  let newArr = [];
+  //cycle through array, arr
+  for(let i = 0; i < arr.length; i++) {
+    //push each item value into the new array
+    newArr.push(arr[i].item);
+  }
+  //if the array length is 1, join by '', essentially producing itself
+  if(newArr.length < 2) {
+    return newArr.join('');
+  } else {
+    //else pop last value, join array back then add pop value back
+ let final = newArr.pop(); 
+ return newArr.join(', ') + ' and ' + final;
+  }
+}
+
+console.log(groceries( [{item: 'Carrots'}, {item: 'Hummus'}, {item: 'Pesto'}, {item: 'Rigatoni'}]));
+console.log(groceries( [{item: 'Bread'}, {item: 'Butter'}]));
+console.log(groceries( [{item: 'Cheese Balls'}]));
