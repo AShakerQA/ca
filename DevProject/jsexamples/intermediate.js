@@ -159,3 +159,28 @@ const dinner = [
 ];
 
 console.log(isTheDinnerVegan(dinner));
+
+
+//sort by array object attribute
+const speciesArray = [
+    { speciesName: "shark", numTeeth: 50 },
+    { speciesName: "dog", numTeeth: 42 },
+    { speciesName: "alligator", numTeeth: 80 },
+    { speciesName: "human", numTeeth: 32 },
+  ];
+  //
+const sortSpeciesByTeeth = (array) =>
+    array.sort((a, b) => a.numTeeth > b.numTeeth);
+/*
+within the docs for Array.prototype.sort()
+when passing a and b, if a > b then a is sorted after b i.e b,a 
+and vice versa for a < b, then sorted as a,b
+Therefore > sorts ascending and < sorts decending.
+*/
+console.log(sortSpeciesByTeeth(speciesArray));
+// Should print:
+// [ { speciesName: 'human', numTeeth: 32 },
+//   { speciesName: 'dog', numTeeth: 42 },
+//   { speciesName: 'shark', numTeeth: 50 },
+//   { speciesName: 'alligator', numTeeth: 80 } ]
+  
