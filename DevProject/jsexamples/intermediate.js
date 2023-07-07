@@ -184,3 +184,22 @@ console.log(sortSpeciesByTeeth(speciesArray));
 //   { speciesName: 'shark', numTeeth: 50 },
 //   { speciesName: 'alligator', numTeeth: 80 } ]
   
+/*
+func takes an array of strings and if keys are in the array returns index, if not returns -1
+func findMyKeys takes a array, calls .findIndex() method on said array
+for each item in the array, compare item to 'keys'
+*/
+const findMyKeys = (array) => array.findIndex((item) => item === "keys");
+
+const randomStuff = [
+  "credit card",
+  "screwdriver",
+  "receipt",
+  "gum",
+  "keys",
+  "used gum",
+  "plastic spoon",
+];
+
+console.log(findMyKeys(randomStuff));
+// Should print 4
