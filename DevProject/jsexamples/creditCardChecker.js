@@ -34,14 +34,19 @@ const validateCred = (arr) => {
   // console.log(tempArray);
   let sum = 0;
     for (var i = 1; i < tempArray.length; i++) {
+      // console.log(sum);
       if (i % 2 === 1){ //odd positions
         if ((tempArray[i] * 2) > 9) {
           sum += (tempArray[i] * 2) - 9;
-        } else {
+          // console.log(sum);
+        } 
+        else {
           sum += tempArray[i] * 2;
+          //  console.log(sum);         
         }
       } else {
         sum += tempArray[i]; 
+          // console.log(sum);
       }
     }
     // console.log(sum);
@@ -55,7 +60,14 @@ const validateCred = (arr) => {
 console.log(validateCred(valid1));
 
 
+const findInvalidCards = (arr) => {
+  let invalidCards = [];
+  for (let item of arr) {
+    if (!validateCred(arr)) {
+      invalidCards.push(arr);
+    }
+  }
+  return invalidCards;
+};
 
-
-
-
+console.log(findInvalidCards(batch));
