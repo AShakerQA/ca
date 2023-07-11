@@ -56,10 +56,6 @@ const validateCred = (arr) => {
     return arr[arr.length - 1] === 10 - (sum % 10);
 };
 
-
-console.log(validateCred(valid1));
-
-
 const findInvalidCards = (arr) => {
   let invalidCards = [];
   for (let item of arr) {
@@ -70,4 +66,38 @@ const findInvalidCards = (arr) => {
   return invalidCards;
 };
 
-console.log(findInvalidCards(batch));
+// console.log(findInvalidCards(batch));
+
+//find matches the first occurence in array to digit
+const findCompany = (invalidCards, digit) => {
+  return invalidCards.find(card => card[card.length - 1] === digit);
+};
+
+const idInvalidCardCompanies = (invalidCards) => {
+  const companies = [];
+  if (findCompany(invalidCards, 3)) {
+    companies.push("AMEX");
+  }
+  if (findCompany(invalidCards, 4)) {
+    companies.push("VISA");
+  }
+  if (findCompany(invalidCards, 5)) {
+    companies.push("MasterCard");
+  }
+  if (findCompany(invalidCards, 6)) {
+    companies.push("Discover");
+  }
+    if (companies.length === 0) {
+    console.log("Company not found");
+    return;
+  }
+  return companies;
+};
+
+
+for (var card of batch) {
+  console.log(validateCred(card)); // 5 times true, 6 times false, true, 2 times false, true
+}
+const invalidCards = findInvalidCards(batch);
+console.log(invalidCards); // array of 8 invalid card arrays
+console.log(idInvalidCardCompanies(invalidCards)); // expected [ 'AMEX', 'VISA', 'MasterCard' ]
