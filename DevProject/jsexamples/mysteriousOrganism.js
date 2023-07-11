@@ -15,6 +15,18 @@ const returnRandBase = () => {
   
   console.log(mockUpStrand());
   
+  /*
+  mutate() {
+    const randIndex = Math.floor(Math.random() * this.dna.length);
+    let newBase = returnRandBase();
+    while (this.dna[randIndex] === newBase) {
+      newBase = returnRandBase();
+    }
+    this.dna[randIndex] = newBase;
+    return this.dna;
+  },
+  */
+
   const pAequorFactory = (specimenNum, dna) => {
     return {
       specimenNum,
@@ -23,15 +35,38 @@ const returnRandBase = () => {
           do {
             this.dna = returnRandBase();
           } while (dna === this.dna);
-        } 
+        },
+        compareDNA(otherOrg) {
+          const similarities = this.dna.reduce((acc, curr, idx, arr) => {
+            if (arr[idx] === otherOrg.dna[idx]) {
+              return acc + 1;
+            } else {
+              return acc;
+            }
+          }, 0);
+          const percentOfDNAshared = (similarities / this.dna.length) * 100;
+          const percentageTo2Deci = percentOfDNAshared.toFixed(2);
+          console.log(`${this.specimanNum} and ${otherOrg.specimanNum} have ${percentageTo2Deci}% DNA in common.`);
+        },
+        willLikelySurvive() {
+          const cOrG = this.dna.filter(el => el === "C" || el === "G");
+          return cOrG.length / this.dna.length >= 0.6;
+        },
+      }
+    };
+    
+    const survivingSpecimen = [];
+    let idCounter = 1;
+    
+    while (survivingSpecimen.length < 30) {
+      let newOrg = pAequorFactory(idCounter, mockUpStrand());
+      if (newOrg.willLikelySurvive()) {
+        survivingSpecimen.push(newOrg);
+      }
+      idCounter++;
     }
-  };
-  
-  const ant = pAequorFactory('ant', 'A');
-  
-  console.log(ant.dna);
-  ant.mutate();
-  console.log(ant.dna);
+    
+    console.log(survivingSpecimen)
   
   
   
