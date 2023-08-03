@@ -195,3 +195,8 @@ console.log(words.some((word) =>  word.length < 6 ));
 // }));
 
 //END OF ITERATORS
+
+//Random number in a range
+function randomRange(myMin, myMax) {
+  return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
+}
