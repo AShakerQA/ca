@@ -238,8 +238,9 @@ function countup(n) {
 }
 console.log(countup(5));
 // array pushes values from n to n-1
-// i.e. push(6) then push(5)
-// Output [5, 4, 3, 2, 1]
+// i.e. from the top level of the call stack
+// push(1) then push(2) until countup(5) is reached
+// Output [1, 2, 3, 4, 5]
 
 //To go the opposite way, use unshift
 function countdown(n){
@@ -249,10 +250,11 @@ function countdown(n){
     const countArray = countdown(n - 1);
     countArray.unshift(n);
     return countArray;
-  }
+  } // top level of call stack takes 1
+// unshifts 1, [1] then unshifts 2 = [2, 1] etc
 }
 console.log(countdown(6));
-// Output: [1, 2, 3, 4, 5, 6]
+// Output: [6, 5, 4, 3, 2, 1]
 // adds each value to the beggining, shifting the largest value to the end
 
 //Recursively create a range of numbers
