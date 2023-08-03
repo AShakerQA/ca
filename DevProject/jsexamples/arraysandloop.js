@@ -200,3 +200,82 @@ console.log(words.some((word) =>  word.length < 6 ));
 function randomRange(myMin, myMax) {
   return Math.floor(Math.random() * (myMax - myMin + 1) + myMin);
 }
+
+//ParseInt example
+function convertToInteger(str) {
+  return parseInt(str);
+}
+
+convertToInteger("56");
+
+//ParseInt with radix
+function convertToInteger(str) {
+  return parseInt(str, 2);
+}
+//Convert string binary into number
+console.log(convertToInteger("10011"));
+// Output: 19
+
+//Multiple Conditional Ternary Operators
+function checkSign(num) {
+  return (num === 0) ? "zero" 
+    : (num > 0) ? "positive"
+    : "negative";
+}
+
+checkSign(10);
+
+
+//Recursion
+function countup(n) {
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countup(n - 1);
+    countArray.push(n);
+    return countArray;
+  }
+}
+console.log(countup(5));
+// array pushes values from n to n-1
+// i.e. push(6) then push(5)
+// Output [5, 4, 3, 2, 1]
+
+//To go the opposite way, use unshift
+function countdown(n){
+  if (n < 1) {
+    return [];
+  } else {
+    const countArray = countdown(n - 1);
+    countArray.unshift(n);
+    return countArray;
+  }
+}
+console.log(countdown(6));
+// Output: [1, 2, 3, 4, 5, 6]
+// adds each value to the beggining, shifting the largest value to the end
+
+//Recursively create a range of numbers
+function rangeOfNumbers(startNum, endNum) {
+  if (endNum < startNum) {
+    return []; //base case, when endNum is smaller than startNum, end recursion
+  } else {
+    const constArray = rangeOfNumbers(startNum, endNum - 1)
+    constArray.push(endNum); 
+    return constArray;
+  }
+};
+
+//rangeOfNumbers(1,5) -> [1, 2, 3, 4, 5]
+console.log(rangeOfNumbers(1,5));
+/* At first, this seems counterintuitive since the value of endNum decreases,
+  but the values in the final array are increasing. 
+  This happens because the push happens last, after the recursive call has returned. 
+  At the point where endNum is pushed into the array, 
+  rangeOfNumbers(startNum, endNum - 1) has already been evaluated and returned [1, 2, ..., endNum - 1]
+  ----E.g.
+  countdown(5), countArray.push(6)
+  countdown(4), countArray.push(5), countArray.push(6)
+  until...
+  countdown(1), countArray.push(2) ... countArray.push(6)
+*/
